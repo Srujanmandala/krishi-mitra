@@ -1,0 +1,30 @@
+{
+  "version": "v1",
+  "timestamp": "2025-09-23T16:07:28.036138",
+  "model_type": "LightGBM_Regressor",
+  "metrics": {
+    "mae": 18.922390275840375,
+    "rmse": 43.93480658372078,
+    "r2": 0.9668328494433255,
+    "best_iteration": 77,
+    "feature_importance": {
+      "n": 11442509.109405518,
+      "p": 8054313.240539551,
+      "k": 10679385.789718628,
+      "ph": 8552149.040878296,
+      "temperature": 6863815.9471588135,
+      "humidity": 10539629.530014038,
+      "rainfall": 14505713.46736145,
+      "fertilizer_cost": 10855182.919525146,
+      "crop_encoded": 875130627.6884155
+    }
+  },
+  "feature_count": 8,
+  "crops_supported": [
+    "rice",
+    "wheat",
+    "maize",
+    "cotton",
+    "sugarcane"
+  ]
+}

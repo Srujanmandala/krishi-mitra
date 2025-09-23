@@ -1,0 +1,62 @@
+{
+  "version": "v1",
+  "timestamp": "2025-09-23T16:06:05.682716",
+  "model_type": "RandomForestClassifier",
+  "features": [
+    "temperature",
+    "humidity",
+    "ph",
+    "rainfall"
+  ],
+  "n_classes": 22,
+  "class_names": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "metrics": {
+    "train_accuracy": 0.9914772727272727,
+    "test_accuracy": 0.9636363636363636,
+    "cv_accuracy_mean": 0.9618181818181817,
+    "cv_accuracy_std": 0.005640760748177656,
+    "n_classes": 22,
+    "feature_importance": [
+      {
+        "feature": "rainfall",
+        "importance": 0.34474300821936044
+      },
+      {
+        "feature": "humidity",
+        "importance": 0.3309985735731946
+      },
+      {
+        "feature": "temperature",
+        "importance": 0.16986384399441312
+      },
+      {
+        "feature": "ph",
+        "importance": 0.15439457421303177
+      }
+    ]
+  },
+  "training_date": "2025-09-23"
+}
