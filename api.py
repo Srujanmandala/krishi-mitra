@@ -11,10 +11,38 @@ from datetime import datetime
 
 # FastAPI imports
 from fastapi import FastAPI, HTTPException, status
-from fastapi.middleware.cors import CORSMiddleware
+
 from pydantic import BaseModel, Field
 import uvicorn
 
+from fastapi.middleware.cors import CORSMiddleware
+
+# Add this right after creating your FastAPI app
+app = FastAPI(
+    title="Crop AI Prediction API",
+    description="AI-powered crop, fertilizer, and profit analysis API",
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc"
+)
+
+# Enhanced CORS configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://krishi-mitra-hjrz.onrender.com",  # Your Render domain
+        "http://localhost:3000",                   # Local development
+        "http://localhost:5173",                   # Vite dev server
+        "http://127.0.0.1:3000",                   # Alternative localhost
+        "http://127.0.0.1:5173",                   # Alternative Vite
+        # Add your frontend domains here
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],  # Or specify: ["GET", "POST", "PUT", "DELETE"]
+    allow_headers=["*"],  # Or specify needed headers
+    expose_headers=["*"],  # Expose custom headers if needed
+    max_age=600,  # Preflight request cache time in seconds
+)
 def is_running_on_render():
     """Check if we're running on Render"""
     return os.environ.get('RENDER', False) or 'RENDER_EXTERNAL_URL' in os.environ
